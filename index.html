@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="ThemePixels">
+	<title>Admin Portal</title>
+	<link href="css/font-awesome.css" rel="stylesheet">
+	<link href="css/ionicons.css" rel="stylesheet">
+	<link href="css/perfect-scrollbar.css" rel="stylesheet">
+	
+	<link href="css/chartist.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/bracket.css">
+	<style>
+	.jqstooltip {
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		visibility: hidden;
+		background: rgb(0, 0, 0) transparent;
+		background-color: rgba(0, 0, 0, 0.6);
+		filter: progid: DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+		-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+		color: white;
+		font: 10px arial, san serif;
+		text-align: left;
+		white-space: nowrap;
+		padding: 5px;
+		border: 1px solid white;
+		z-index: 10000;
+	}
+	
+	.jqsfield {
+		color: white;
+		font: 10px arial, san serif;
+		text-align: left;
+	}
+	</style>
+</head>
+
+<body>
+	
+	<div class="br-logo"><a href="#"><span><center><img src="imgs/logo-2.png" style="width: 50%;"></center></span></a></div>
+	<div class="br-sideleft overflow-y-auto ps ps--theme_default ps--active-y" data-ps-id="8be94ae8-0e2b-83a1-2bd4-7fff9781c740">
+		<div class="br-sideleft-menu">
+			<a href="#" class="br-menu-link active mg-t-20">
+				<div class="br-menu-item"> <i class="menu-item-icon icon ion-ios-paper-outline tx-22"></i> <br>
+                    <span class="menu-item-label">Dashboard</span> </div>
+				
+			</a>
+			
+			<a href="" class="br-menu-link  mg-t-20">
+				<div class="br-menu-item"> <i class="menu-item-icon icon ion-ios-photos-outline tx-20"></i> <br>
+                    <span class="menu-item-label">Fund Transfer</span> </div>
+				
+			</a>
+			
+			<a href="#" class="br-menu-link">
+				<div class="br-menu-item"> <i class="menu-item-icon icon ion-stats-bars tx-24"></i> <br>
+                    <span class="menu-item-label">Report</span>  </div>
+				
+			</a>
+			
+	
+			
+			<a href="#" class="br-menu-link mg-t-20">
+				<div class="br-menu-item"> <i class="menu-item-icon icon ion-ios-bookmarks-outline tx-20"></i> <br>
+                    <span class="menu-item-label">Wallet</span> </div>
+				
+			</a>
+			<a href="#" class="br-menu-link  mg-t-20">
+				<div class="br-menu-item"> <i class="menu-item-icon icon ion-ios-bookmarks-outline tx-20"></i> <br>
+                    <span class="menu-item-label">Settlement</span> </div>
+				
+			</a>
+			<a href="#" class="br-menu-link  mg-t-20">
+				<div class="br-menu-item"> <i class="menu-item-icon icon ion-ios-gear-outline tx-20"></i> <br>
+                    <span class="menu-item-label">Settings</span> </div>
+				
+			</a>
+			
+			
+			
+		</div>
+		<br>
+		<div class="ps__scrollbar-x-rail" style="left: 0px; bottom: 0px;">
+			<div class="ps__scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div>
+		</div>
+		<div class="ps__scrollbar-y-rail" style="top: 0px; height: 694px; right: 0px;">
+			<div class="ps__scrollbar-y" tabindex="0" style="top: 0px; height: 560px;"></div>
+		</div>
+	</div>
+	
+	<div class="br-header">
+		<div class="br-header-left">
+			<div class="navicon-left hidden-md-down"><a id="btnLeftMenu" href="#"><i class="icon ion-navicon-round"></i></a></div>
+			<div class="navicon-left hidden-lg-up"><a id="btnLeftMenuMobile" href="#"><i class="icon ion-navicon-round"></i></a></div>
+			
+			
+		</div>
+		<div class="br-header-right">
+			<nav class="nav">
+				
+				<div class="dropdown">
+					<a href="#" class="nav-link nav-link-profile" data-toggle="dropdown"> 
+                        <span class="logged-name hidden-md-down"><b style="float: right;">Lory Nexa</b><br>
+                           Main Bal: रु 0000
+                        </span> 
+                        <img src="imgs/img1.jpg" class="wd-32 rounded-circle" alt="" style="width: 60px;margin-top: -10%;"> 
+                        </a>
+				
+				</div>
+			</nav>
+			
+		</div>
+	</div>
+	
+	<div class="br-mainpanel" style="position: relative;">
+		<div class="pd-30">
+			
+            <div class="row row-sm">
+				<div class="col-sm-6 col-xl-6">
+					<h4 class="tx-gray-800 mg-b-5" style="color: #1352a1">Dashboard</h4>
+				</div>
+				<div class="col-sm-6 col-xl-2">
+					<div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-calendar tx-16 lh-0"></i></span>
+                        <input id="dateMask" type="text" class="form-control" placeholder="From">
+                    </div>
+				</div>
+				<div class="col-sm-6 col-xl-2">
+					<div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-calendar tx-16 lh-0"></i></span>
+                        <input id="dateMask" type="text" class="form-control" placeholder="To">
+                    </div>
+				</div>
+				<div class="col-sm-6 col-xl-2">
+					<div class="input-group" >
+                        <span class="input-group-addon" style="color: #fff;background-color: #1352a1;padding: 20px;"><i class="fa fa-search tx-16 lh-0" style="color: #fff;"></i></span>
+                       
+                    </div>
+				</div>
+				
+			</div>
+                
+
+		</div>
+		<style>
+            .card-text .card-value {
+				padding: 36px;
+			}
+			@media (max-width: 480px){
+				.card-text .card-value {
+					padding: 53px;
+				}
+			}
+		</style>
+		<div class="br-pagebody mg-t-5 pd-x-30 card-text">
+			<div class="row row-sm">
+				<div class="col-sm-6 col-xl-3">
+					<div class="rounded overflow-hidden" style="background-image: url('imgs/bg.jpg');background-position: center;background-repeat: no-repeat;">
+						<div class="align-items-center rounded card-value">
+                            <div class="mg-l-20" style="float: right;">
+								<p class="tx-16 tx-mont tx-medium tx-uppercase tx-white-8 mg-b-10">Total Transaction</p>
+								<p class="tx-24 tx-white tx-lato tx-bold mg-b-2 lh-1">रु 5476548</p>
+                             </div>
+                            <i class="ion ion-card tx-60 lh-0 tx-white"></i><br>
+							
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-sm-6 col-xl-3">
+					<div class="rounded overflow-hidden" style="background-image: url('imgs/bg.jpg');background-position: center;background-repeat: no-repeat;">
+						<div class=" align-items-center card-value">
+                            <div class="mg-l-20" style="float: right;">
+								<p class="tx-16 tx-mont tx-medium tx-uppercase tx-white-8 mg-b-10">Successful Txn.</p>
+								<p class="tx-24 tx-white tx-lato tx-bold mg-b-2 lh-1">रु 3453894</p>
+                             </div><br>
+                            <i class="ion  ion-checkmark-circled tx-60 lh-0 tx-white"></i>
+							
+						</div>
+					</div>
+				</div>
+				
+				
+				
+				<div class="col-sm-6 col-xl-3">
+					<div class="rounded overflow-hidden" style="background-image: url('imgs/bg.jpg');background-position: center;background-repeat: no-repeat;">
+						<div class="align-items-center card-value"> 
+							<div class="" style="float: right;">
+								<p class="tx-16 tx-mont tx-medium tx-uppercase tx-white-8 ">Pending Txn.</p>
+								<p class="tx-24 tx-white tx-lato tx-bold mg-b-2 lh-1">रु 5486</p> 
+                                 </div><br>
+                                 <i class="ion ion-ios-undo-outline tx-60 lh-0 tx-white" style="    margin-top: 19%;"></i>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-sm-6 col-xl-3">
+					<div class="rounded overflow-hidden" style="background-image: url('imgs/bg.jpg');background-position: center;background-repeat: no-repeat;">
+						<div class="align-items-center card-value"> 
+							<div class="" style="float: right;">
+								<p class="tx-16 tx-mont tx-medium tx-uppercase tx-white-8">No. of Refunds</p>
+								<p class="tx-24 tx-white tx-lato tx-bold mg-b-2 lh-1">रु 64876</p> 
+                                </div><br>
+                                <i class="ion ion-clock tx-60 lh-0 tx-white" style="    margin-top: 19%;"></i>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			<!-- row -->
+			<div class="row row-sm mg-t-20">
+				<div class="col-sm-8 col-xl-8 ">
+					<div class="card pd-0 bd-0 shadow-base rounded">
+						<div class="pd-x-15 pd-t-30 pd-b-15">
+							<div class="d-flex align-items-center justify-content-between" style="background-color: #E9ECEF;padding: 5px 5px 0px 10px;border-radius: 5px">
+								<div>
+									<h6 class="tx-20 tx-inverse tx-semibold tx-spacing-1">Last Transaction</h6>
+								</div>
+								
+							</div>
+						</div>
+						<div class="pd-x-15 pd-b-15">
+							<div class="bd bd-gray-300 rounded table-responsive">
+								<table class="table table-hover mg-b-0">
+								  <thead>
+									<tr>
+									  <th>TRXN ID</th>
+									  <th>NUMBER</th>
+									  <th>AMOUNT</th>
+									  <th>DATE</th>
+									  <th>STATUS</th>
+									</tr>
+								  </thead>
+								  <tbody>
+									<tr>
+									  <th scope="row">12345678910</th>
+									  <td>0000000000</td>
+									  <td>रु 1.0000</td>
+									  <td>1/28/2022</td>
+									  <td><button class="btn btn-success btn-block rounded">Success</button> </td>
+									</tr>
+									<tr>
+									  <th scope="row">12345678910</th>
+									  <td>0000000000</td>
+									  <td>रु 1.0000</td>
+									  <td>1/28/2022</td>
+									  <td><button class="btn btn-warning disabled btn-block rounded">Pending</button> </td>
+									</tr>
+									<tr>
+									  <th scope="row">12345678910</th>
+									  <td>0000000000</td>
+									  <td>रु 1.0000</td>
+									  <td>1/28/2022</td>
+									  <td> <button class="btn btn-danger disabled btn-block rounded">Failed</button></td>
+									</tr>
+									<tr>
+										<th scope="row">12345678910</th>
+										<td>0000000000</td>
+										<td>रु 1.0000</td>
+										<td>1/28/2022</td>
+										<td><button class="btn btn-success btn-block rounded">Success</button> </td>
+									  </tr>
+									  <tr>
+										<th scope="row">12345678910</th>
+										<td>0000000000</td>
+										<td>रु 1.0000</td>
+										<td>1/28/2022</td>
+										<td><button class="btn btn-warning disabled btn-block rounded">Pending</button> </td>
+									  </tr>
+									  <tr>
+										<th scope="row">12345678910</th>
+										<td>0000000000</td>
+										<td>रु 1.0000</td>
+										<td>1/28/2022</td>
+										<td> <button class="btn btn-danger disabled btn-block rounded">Failed</button></td>
+									  </tr>
+									
+								  </tbody>
+								</table>
+							  </div>
+						</div>
+					</div>
+					
+				</div>
+				
+				<div class="col-sm-4 col-xl-4">
+					
+					<div class="card bg-transparent bd-0">
+						<div class="card bd-0">
+                            <div id="carousel2" class="carousel slide" data-ride="carousel">
+                                <ol class="carousel-indicators">
+                                    <li data-target="#carousel2" data-slide-to="0" class=""></li>
+                                    <li data-target="#carousel2" data-slide-to="1" class=""></li>
+                                    <li data-target="#carousel2" data-slide-to="2" class="active"></li>
+                                </ol>
+                                <div class="carousel-inner" role="listbox">
+                                    <div class="carousel-item">
+                                        <div class="ht-350 pos-relative d-flex align-items-center rounded">
+                                                <img src="imgs/a.jpg">
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item ">
+                                        <div class="ht-350 pos-relative d-flex align-items-center rounded">
+                                            <img src="imgs/a1.jpg">
+                                        </div>
+                                    </div>
+                                    <div class="carousel-item active rounded">
+                                       
+                                        <div class="ht-350 pos-relative d-flex align-items-center rounded">
+                                            <img src="imgs/a3.png">
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                      
+					</div>
+					
+				</div>
+				
+			</div>
+			<div class="row row-sm mg-t-20">
+				<div class="col-sm-8 col-xl-8 ">
+					<div class="card pd-0 bd-0 shadow-base rounded">
+						<div class="pd-x-15 pd-t-30 pd-b-15">
+							<div class="d-flex align-items-center justify-content-between" style="background-color: #E9ECEF;padding: 5px 5px 0px 10px;border-radius: 5px">
+								<div>
+									<h6 class="tx-20 tx-inverse tx-semibold tx-spacing-1">Monthly Earning</h6>
+								</div>
+							</div>
+						</div>
+						<div class="row row-sm mg-t-20">
+							<div class="col-sm-8 col-xl-8 ">
+								<div class="pd-x-15 pd-b-15">
+									<div class="card card-body rounded-0">
+										<div class="new1" style="display: flex;">
+											<h6 class="tx-inverse tx-16 mg-b-5" style="color: #1352a1;">Settle Balance <br><span class="tx-14" style="padding-top: 10px;">रु  0</span></h6>
+											<button class="btn btn-warning btn-block mg-b-10" style="width: 20%;margin-left: 35px;border-radius: 50px">Warning</button>
+										</div>
+										<div class="new1" style="display: flex;margin-top: 30px;">
+											<h6 class="tx-inverse tx-16 mg-b-5" style="color: #1352a1;">Unsettle Balance <br><span class="tx-14" style="padding-top: 10px;">रु  0</span></h6>
+											<button class="btn btn-block mg-b-10" style="width: 20%;margin-left: 20px;border-radius: 50px;background-color: #1352a1;color: #fff;">Warning</button>
+										</div>
+										<div class="new1" style="display: flex;margin-top: 30px;">
+											<h6 class="tx-inverse tx-16 mg-b-5" style="color: #1352a1;">Current Balance <br><span class="tx-14" style="padding-top: 10px;">रु  0</span></h6>
+											<button class="btn btn-block mg-b-10" style="width: 20%;margin-left: 20px;border-radius: 50px;background-color: #5d60ef;color: #fff;">Warning</button>
+										</div>
+										
+									</div>
+								</div>
+							</div>
+							<div class="col-sm-4 col-xl-4 ">
+								<div class="tx-right"> 
+									<img src="imgs/cir.png" style="height: 200px">	
+								</div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+				
+				<div class="col-sm-4 col-xl-4">
+					
+					<!-- row -->
+		        <svg height="298" version="1.1" width="538" xmlns="http://www.w3.org/2000/svg" 
+				xmlns:xlink="http://www.w3.org/1999/xlink" style="overflow: hidden; position: relative; left: -0.6px;">
+				<desc style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Created with Raphaël 2.2.0</desc>
+				<defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></defs>
+				<text x="31.135351181030273" y="261" text-anchor="end" font-family="sans-serif" font-size="11px" stroke="none" 
+				fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; font-family: sans-serif; 
+				font-size: 11px; font-weight: normal;" font-weight="normal"></text><path fill="none" 
+				stroke="#aaaaaa" d="M43.63535118103027,261H513" stroke-width="0.5" 
+				style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
+				<text x="31.135351181030273" y="202" text-anchor="end" 
+				font-family="sans-serif" font-size="11px" stroke="none" fill="#888888" 
+				style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; 
+				font-family: sans-serif; font-size: 11px; font-weight: normal;" 
+				font-weight="normal"></text><path fill="none" stroke="#aaaaaa" d="M43.63535118103027,202H513" 
+					stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
+					<text x="31.135351181030273" y="143" text-anchor="end" font-family="sans-serif" font-size="11px" 
+					stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); 
+					text-anchor: end; font-family: sans-serif; font-size: 11px; font-weight: normal;" font-weight="normal">
+					</text>
+					<path fill="none" stroke="#aaaaaa" d="M43.63535118103027,143H513" stroke-width="0.5" 
+					tyle="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
+					<text x="31.135351181030273" y="84" text-anchor="end" font-family="sans-serif" font-size="11px" 
+					stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: end; 
+					font-family: sans-serif; font-size: 11px; font-weight: normal;" font-weight="normal">
+					
+				</text>
+				<path fill="none" stroke="#aaaaaa" d="M43.63535118103027,84H513" 
+					stroke-width="0.5" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></path>
+				<text x="278.31767559051514" y="273.5" text-anchor="middle" font-family="sans-serif" font-size="11px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 11px; font-weight: normal;" font-weight="normal" transform="matrix(1,0,0,1,0,6)"><tspan dy="3.600006103515625" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+						Current Balance
+					</tspan></text>
+					<text x="184.4447458267212" y="273.5" text-anchor="middle" font-family="sans-serif" font-size="11px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 11px; font-weight: normal;" font-weight="normal" transform="matrix(1,0,0,1,0,6)"><tspan dy="3.600006103515625" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">
+						Unsettle Balance
+					</tspan></text>
+					
+					<text x="90.57181606292724" y="273.5" text-anchor="middle" font-family="sans-serif" font-size="11px" stroke="none" fill="#888888" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: middle; font-family: sans-serif; font-size: 11px; font-weight: normal;" font-weight="normal" transform="matrix(1,0,0,1,0,6)"><tspan dy="3.600006103515625"
+						 style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Settle Balance</tspan>
+						
+						</text>
+						
+						 <rect x="55.369467401504515" y="182.33333333333334" width="70.40469732284546" 
+						 height="78.66666666666666" rx="0" ry="0" fill="#ff800d" 
+						 stroke="none" fill-opacity="1" 
+						 style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;">
+						 <text>12365</text>
+						</rect>
+						 <rect x="55.369467401504515" y="111.53333333333333" width="70.40469732284546" 
+						 height="70.80000000000001" rx="0" ry="0" fill="#ff800d" stroke="none" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect>
+						 <rect x="55.369467401504515" y="48.599999999999994" width="70.40469732284546" 
+						 height="62.93333333333334" rx="0" ry="0" fill="#ff891d" stroke="none"
+						  fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); 
+						  fill-opacity: 1;"></rect><rect x="149.24239716529846" y="202" width="70.40469732284546" 
+						  height="59" rx="0" ry="0" fill="#1352a1" stroke="none" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect><rect x="149.24239716529846" y="150.86666666666667" width="70.40469732284546" height="51.133333333333326" rx="0" ry="0" fill="#1352a1" stroke="none" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;">
+
+						  </rect><rect x="149.24239716529846" y="91.86666666666667" width="70.40469732284546" 
+						  height="59" rx="0" ry="0" fill="#1352a1" stroke="none" fill-opacity="1" 
+						  style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect>
+						 <rect x="243.11532692909242" y="221.66666666666669" width="70.40469732284546" height="39.333333333333314" rx="0" ry="0" fill="#5d60ef" stroke="none" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect><rect x="243.11532692909242" y="190.20000000000002" 
+						 width="70.40469732284546" height="31.46666666666667" rx="0"
+						  ry="0" fill="#5d60f9" stroke="none" fill-opacity="1" 
+						  style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;">
+						</rect><rect x="243.11532692909242" y="154.8" width="70.40469732284546" height="35.400000000000006" 
+						rx="0" ry="0" fill="#5d60f9" stroke="none" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect>
+					<rect x="430.8611864566803" y="209.86666666666667" width="70.40469732284546" height="51.133333333333326" 
+					rx="0" ry="0" fill="#1352a1" stroke="none" fill-opacity="1" 
+					style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect><rect x="430.8611864566803" y="162.66666666666669" width="70.40469732284546" height="47.19999999999999" rx="0" ry="0" fill="#5d60ef" stroke="none" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect><rect x="430.8611864566803" y="115.4666666666667" width="70.40469732284546" height="47.19999999999999" rx="0" ry="0" fill="#01cb99" stroke="none" fill-opacity="1" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 1;"></rect>
+				</svg>
+					
+				
+
+				</div>
+		</div>
+	
+		<footer class="pd-x-30" >
+			<div class="footer" style="text-align: center;margin: 10px 0 10px 0;
+			background: #fff;
+			padding: 10px 0 10px 0;
+			border-radius: 0px 0 50px 50px;">
+				<div class="mg-b-2" style="color: #097ab5;
+				font-size: 16px;">Copyright © 2022. Admin. All Rights Reserved.</div>
+			</div>
+		</footer>
+		
+	</div>
+
+	<script src="js/jquery.js"></script>
+	<script src="js/popper.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/perfect-scrollbar.jquery.js"></script>
+	<script src="js/moment.js"></script>
+	<script src="js/jquery-ui.js"></script>
+	<script src="js/jquery.switchButton.js"></script>
+	<script src="js/jquery.peity.js"></script>
+	<script src="js/chartist.js"></script>
+	<script src="js/jquery.sparkline.min.js"></script>
+	<script src="js/d3.js"></script>
+	<script src="js/rickshaw.min.js"></script>
+	<script src="js/bracket.js"></script>
+	<script src="js/ResizeSensor.js"></script>
+	<script src="js/dashboard.js"></script>
+	<script>
+	$(function() {
+		'use strict'
+	
+		$(window).resize(function() {
+			minimizeMenu();
+		});
+		minimizeMenu();
+
+		function minimizeMenu() {
+			if(window.matchMedia('(min-width: 992px)').matches && window.matchMedia('(max-width: 1299px)').matches) {
+				$('.menu-item-label,.menu-item-arrow').addClass('op-lg-0-force d-lg-none');
+				$('body').addClass('collapsed-menu');
+				$('.show-sub + .br-menu-sub').slideUp();
+			} else if(window.matchMedia('(min-width: 1300px)').matches && !$('body').hasClass('collapsed-menu')) {
+				$('.menu-item-label,.menu-item-arrow').removeClass('op-lg-0-force d-lg-none');
+				$('body').removeClass('collapsed-menu');
+				$('.show-sub + .br-menu-sub').slideDown();
+			}
+		}
+	});
+	</script>
+
+</body>
+
+</html>
